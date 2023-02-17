@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/script.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/main.js":
-/*!************************!*\
-  !*** ./src/js/main.js ***!
-  \************************/
+/***/ "./src/js/script.js":
+/*!**************************!*\
+  !*** ./src/js/script.js ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -100,7 +100,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function hideTabContent() {
     tabsContent.forEach(item => {
-      item.style.display = 'none';
+      item.classList.add('hide');
+      item.classList.remove('show', 'fade');
     });
     tabs.forEach(item => {
       item.classList.remove('tabheader__item_active');
@@ -108,7 +109,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function showTabContent(i = 0) {
-    tabsContent[i].style.display = 'block';
+    tabsContent[i].classList.add('show', 'fade');
+    tabsContent[i].classList.remove('hide');
     tabs[i].classList.add('tabheader__item_active');
   }
 
